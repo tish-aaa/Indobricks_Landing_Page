@@ -5,11 +5,11 @@
     font-family: 'TimesNewRoman', serif;
 }
 
-/* .alert{
-    padding-y: 110;
-    paddinf-x: 120;
-} */
-
-.table{
-    padding-top: 200%;
+#carouselExampleControls carousel-caption{
+    color: black !important;
+    right: 58% !important;
+    text-align: center !important;
+    max-width: 500px !important;
+    left: auto !important;
+    top: auto !important;
 }
