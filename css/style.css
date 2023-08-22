@@ -13,3 +13,7 @@
     left: auto !important;
     top: auto !important;
 }
+
+html {
+    background-color: black;
+  }
