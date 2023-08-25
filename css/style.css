@@ -147,8 +147,8 @@ section::after {
 }
 
 .card {
-  width: 280px;
-  height: 360px;
+  width: 320px;
+  height: 460px;
   border-radius: 15px;
   padding: 1.5rem;
   background: white;
