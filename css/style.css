@@ -5,18 +5,21 @@
   font-family: "TimesNewRoman", serif;
 }
 
-#carouselExampleControls carousel-caption {
+/* #carouselExampleControls carousel-caption {
   color: black !important;
   right: 58% !important;
   text-align: center !important;
   max-width: 500px !important;
   left: auto !important;
   top: auto !important;
-}
+} */
+
 
 
 body,html {
-  display: flex;
+  width: 100%;
+  height: 100%;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
