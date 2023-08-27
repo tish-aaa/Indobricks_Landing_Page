@@ -4,13 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
   <!-- Basic CSS (Own CSS) -->
   <link rel="stylesheet" href="css/style.css" />
+
   <!-- ADDING SASS for top projects cards -->
   <link rel="stylesheet/less" type="text/css" href="styles.less" />
+
+  <!-- ADDING SPLIDE CSS -->
+  <!-- Link to the file hosted on your server, -->
+  <link rel="stylesheet" href="path-to-the-file/splide.min.css">
+  <!-- or link to the CDN -->
+  <link rel="stylesheet" href="url-to-cdn/splide.min.css">
+
+
   <script src="less.js" type="text/javascript"></script>
 
   <title>Home Page</title>
@@ -19,8 +30,27 @@
 <body>
   <!-- Javascript Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+
+      // BOOTSTRAP CAROUSEL TIME INTERVAL
+      $('#mainCarousel').carousel({
+        interval: 10
+      });
+
+      // APPLYING SPLIDE TO YOUR HTML
+      import Splide from '@splidejs/splide';
+      new Splide('.splide').mount();
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#thumbnail-carousel', {
+          fixedWidth: 100,
+          gap: 10,
+          rewind: true,
+          pagination: false,
+        }).mount();
+      });
+    </script>
 
   <!-- Navbar with logo in the middle and contents aligned beside it. -->
   <div class="relative" style="height: 4rem">
@@ -119,14 +149,15 @@
         <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <div class="row  flex-grow-1 bg-dark">
+      <div class="row  flex-grow-1 bg-dark g-0">
         <div class="col-xs-offset-3 col-xs-6  bg-dark">
           <div class="carousel-inner">
             <div class="carousel-item  text-white active">
-              <div class="carousel-content">
-                <div class="container mt-2 mb-2 align-middle ">
+              <div class="carousel-content p-5">
+                <div class="text-center">
                   <h5>
-                    What We Stand For</h5>
+                    What We Stand For
+                  </h5>
                   <h2>OUR VALUES</h2>
                   <p>At Indobricks, We constantly looking for…
 
@@ -140,13 +171,14 @@
 
                     Professionalism
 
-                    Ethics</p>
+                    Ethics
+                  </p>
                 </div>
               </div>
             </div>
             <div class="carousel-item text-white">
-              <div class="carousel-content">
-                <div class="container mt-2 mb-2 align-middle ">
+              <div class="carousel-content p-5">
+                <div class="text-center">
                   <h5>What we do</h5>
                   <h2>OUR MISSION</h2>
                   <p>Our mission is to empower clients with personalized and client-focused real estate solutions
@@ -162,8 +194,8 @@
               </div>
             </div>
             <div class="carousel-item text-white ">
-              <div class="carousel-content">
-                <div class="container mt-2 mb-2 align-middle ">
+              <div class="carousel-content p-5">
+                <div class="text-center">
                   <h5>We aspire for</h5>
                   <h2>OUR VISION</h2>
                   <p>To become India's leading Real Estate Service company to provide our clients with the most
@@ -175,19 +207,27 @@
               </div>
             </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </div>
-    </div>
-    <div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+    <!-- </div>
+    <div> -->
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> -->
     </div>
   </section>
 
@@ -215,9 +255,9 @@
         </div>
       </div>
     </div>
-
-    <!-- ADDING TOP PROJECTS ANIMATED CARDS ref:https://codepen.io/AlexZab/pen/GREpYqp -->
-    <!-- <section class="my-2">
+  </section>
+  <!-- ADDING TOP PROJECTS ANIMATED CARDS ref:https://codepen.io/AlexZab/pen/GREpYqp -->
+  <!-- <section class="my-2">
           <div class="container">
             <div class="card">
               <div class="content">
@@ -266,101 +306,106 @@
           </div>
         </section> -->
 
-    <!-- TOP PROJECTS SCSS CARDS with transitions ref:https://codepen.io/Gelsot/pen/xpGYyd -->
-    <section class="my-5">
-      <div class="container">
-        <h3 style="
+  <!-- TOP PROJECTS SCSS CARDS with transitions ref:https://codepen.io/Gelsot/pen/xpGYyd -->
+  <section class="my-5">
+    <div class="container">
+      <h3 style="
           color: #fff;
           padding-bottom: 2.5rem;">
-          TOP PROJECTS</h3>
-        <p>
-        <div class="wrapper">
-          <div class="card"><img src="img/homepage_imgs/top_projects/runwal_25hrlife.PNG" />
-            <div class="info">
-              <h3>Runwal 25Hr Life</h3>
-              <p>The project is a new pre launch, called Codename 25 Hour Life, promising you a lifetime the lively
-                lanes of Thane is Manpada.</p>
-              <button>Read More</button>
-            </div>
-          </div>
-          <div class="card"><img src="img/homepage_imgs/top_projects/wadhwa_group.PNG" />
-            <div class="info">
-              <h3>Wadhwa Group</h3>
-              <p>The Wadhwa Group carries a rich legacy of over half a century built on the trust and ... The group is
-                one of Mumbai's leading real estate companies.</p>
-              <button>Read More</button>
-            </div>
-          </div>
-          <div class="card"><img src="img/homepage_imgs/top_projects/lodha_andheri_east.PNG" />
-            <div class="info">
-              <h3>Lodha Andheri East</h3>
-              <p>Lodha Andheri As your senses are enveloped by nature in all her abundance, you savour the joy of
-                knowing that this vast expanse of beauty and greenery.</p>
-              <button>Read More</button>
-            </div>
+        TOP PROJECTS</h3>
+      <p>
+      <div class="wrapper">
+        <div class="card"><img src="img/homepage_imgs/top_projects/runwal_25hrlife.PNG" />
+          <div class="info">
+            <h3>Runwal 25Hr Life</h3>
+            <p>The project is a new pre launch, called Codename 25 Hour Life, promising you a lifetime the lively
+              lanes of Thane is Manpada.</p>
+            <button>Read More</button>
           </div>
         </div>
-        </p>
+        <div class="card"><img src="img/homepage_imgs/top_projects/wadhwa_group.PNG" />
+          <div class="info">
+            <h3>Wadhwa Group</h3>
+            <p>The Wadhwa Group carries a rich legacy of over half a century built on the trust and ... The group is
+              one of Mumbai's leading real estate companies.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="card"><img src="img/homepage_imgs/top_projects/lodha_andheri_east.PNG" />
+          <div class="info">
+            <h3>Lodha Andheri East</h3>
+            <p>Lodha Andheri As your senses are enveloped by nature in all her abundance, you savour the joy of
+              knowing that this vast expanse of beauty and greenery.</p>
+            <button>Read More</button>
+          </div>
+        </div>
       </div>
-    </section>
+      </p>
+    </div>
+  </section>
 
-    <!-- AUTO CAROUSEL FOR FEATURED DEVELOPERS (BOOTSTRAP) -->
-    <section class="my-2">
+  <!-- AUTO CAROUSEL FOR FEATURED DEVELOPERS (BOOTSTRAP) -->
+  <!-- <section class="my-2 p-5">
+      <div class="container">
+      <h3 style="
+        color: #fff;
+        padding-bottom: 2.5rem;">
+        FEATURED DEVELOPERS</h3>
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" >
           <div class="row">
-            <div class="col">
+            <div class="col-lg-2">
               <div class="carousel-item active" >
-                <img src="img/homepage_imgs/featured_developers/godrej logo.jpg" class="d-block w-100" alt="...">
+                <img src="img/homepage_imgs/featured_developers/godrej logo.jpg" style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-2 col-sm-4">
               <div class="carousel-item active">
-                <img src="img/homepage_imgs/featured_developers/kalpataru_logo.png" class="d-block w-100" alt="...">
+                <img src="img/homepage_imgs/featured_developers/kalpataru_logo.png"  style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
               </div>
             </div>
-            <div class="col">
+            <div class="col-lg-2 col-sm-4">
               <div class="carousel-item active">
-                <img src="img/homepage_imgs/featured_developers/lodha_logo.png" class="d-block w-100" alt="...">
+                <img src="img/homepage_imgs/featured_developers/lodha_logo.png"  style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
               </div>
             </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item active">
-                  <img src="img/homepage_imgs/featured_developers/oberoi logo.jpg" class="d-block w-100" alt="...">
+                  <img src="img/homepage_imgs/featured_developers/oberoi logo.jpg" style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item active">
-                  <img src="img/homepage_imgs/featured_developers/raymond realty logo.jpeg" class="d-block w-100"
+                  <img src="img/homepage_imgs/featured_developers/raymond realty logo.jpeg" style="aspect-ratio: 2 / 2;" class="img-fluid"
                     alt="...">
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item active">
-                  <img src="img/homepage_imgs/featured_developers/ronak group logo.png" class="d-block w-100" alt="...">
+                  <img src="img/homepage_imgs/featured_developers/ronak group logo.png" style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
                 </div>
               </div>
             <div class="row">
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item">
-                  <img src="img/homepage_imgs/featured_developers/runwal realty logo.jpg" class="d-block w-100"
+                  <img src="img/homepage_imgs/featured_developers/runwal realty logo.jpg" style="aspect-ratio: 2 / 2;" class="img-fluid"
                     alt="...">
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item">
-                  <img src="img/homepage_imgs/featured_developers/rustomjee logo.png" class="d-block w-100" alt="...">
+                  <img src="img/homepage_imgs/featured_developers/rustomjee logo.png" style="aspect-ratio: 2 / 2;" class="img-fluid" alt="...">
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item">
-                  <img src="img/homepage_imgs/featured_developers/shapoorji pallonji logo.jpg" class="d-block w-100"
+                  <img src="img/homepage_imgs/featured_developers/shapoorji pallonji logo.jpg" style="aspect-ratio: 2 / 2;" class="img-fluid"
                     alt="...">
                 </div>
               </div>
-              <div class="col">
+              <div class="col-lg-2 col-sm-4">
                 <div class="carousel-item">
-                  <img src="img/homepage_imgs/featured_developers/tata housing logo.webp" class="d-block w-100"
+                  <img src="img/homepage_imgs/featured_developers/tata housing logo.webp" style="aspect-ratio: 2 / 2;" class="img-fluid"
                     alt="...">
                 </div>
               </div>
@@ -368,7 +413,49 @@
           </div>
         </div>
       </div>
+    </div>
+    </section> -->
+
+
+  <section class="my-2">
+    <section id="thumbnail-carousel" class="splide"
+      aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/godrej logo.jpg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/kalpataru_logo.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/lodha_logo.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/oberoi logo.jpg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/raymond realty logo.jpeg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/ronak group logo.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/runwal realty logo.jpg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/rustomjee logo.png" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/shapoorji pallonji logo.jpg" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="img/homepage_imgs/featured_developers/tata housing logo.webp" alt="">
+          </li>
+        </ul>
+      </div>
     </section>
+  </section>
 
 </body>
 

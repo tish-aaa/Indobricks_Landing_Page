@@ -5,17 +5,6 @@
   font-family: "TimesNewRoman", serif;
 }
 
-/* #carouselExampleControls carousel-caption {
-  color: black !important;
-  right: 58% !important;
-  text-align: center !important;
-  max-width: 500px !important;
-  left: auto !important;
-  top: auto !important;
-} */
-
-
-
 body,html {
   width: 100%;
   height: 100%;
@@ -148,7 +137,7 @@ section::after {
 
 .card {
   width: 320px;
-  height: 460px;
+  height: 480px;
   border-radius: 15px;
   padding: 1.5rem;
   background: white;
@@ -222,4 +211,18 @@ section::after {
 .card .info button:hover {
   background: dodgerblue;
   color: white;
+}
+
+/* #carouselExampleSlidesOnly .carousel-item{
+  height: 100px;
+}
+
+#carouselExampleSlidesOnly .item, img{
+  height: 100% !important;
+  width:  100% !important;
+} */
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
 }
