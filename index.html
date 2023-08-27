@@ -13,16 +13,23 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- ADDING SASS for top projects cards -->
-  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <!-- <link rel="stylesheet/less" type="text/css" href="styles.less" /> -->
 
   <!-- ADDING SPLIDE CSS -->
   <!-- Link to the file hosted on your server, -->
-  <link rel="stylesheet" href="path-to-the-file/splide.min.css">
+  <!-- <link rel="stylesheet" href="path-to-the-file/splide.min.css"> -->
   <!-- or link to the CDN -->
-  <link rel="stylesheet" href="url-to-cdn/splide.min.css">
+  <!-- <link rel="stylesheet" href="url-to-cdn/splide.min.css"> -->
 
+  <!-- ADDING SPLIDE JS -->
+  <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+  <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
 
-  <script src="less.js" type="text/javascript"></script>
+  <!-- <script src="less.js" type="text/javascript"></script> -->
 
   <title>Home Page</title>
 </head>
@@ -41,7 +48,7 @@
       import Splide from '@splidejs/splide';
       new Splide('.splide').mount();
 
-
+      // SPLIDE JS FOR THUMBNAIL CAROUSEL
       document.addEventListener('DOMContentLoaded', function () {
         new Splide('#thumbnail-carousel', {
           fixedWidth: 100,
@@ -49,6 +56,14 @@
           rewind: true,
           pagination: false,
         }).mount();
+      });
+
+      // JS FOR MAIN CAROUSEL
+      var main = new Splide('#main-carousel', {
+        type: 'fade',
+        rewind: true,
+        pagination: false,
+        arrows: false,
       });
     </script>
 
@@ -307,7 +322,7 @@
         </section> -->
 
   <!-- TOP PROJECTS SCSS CARDS with transitions ref:https://codepen.io/Gelsot/pen/xpGYyd -->
-  <section class="my-5">
+  <!-- <section class="my-5">
     <div class="container">
       <h3 style="
           color: #fff;
@@ -341,6 +356,47 @@
         </div>
       </div>
       </p>
+    </div>
+  </section> -->
+
+  <!-- TOP PROJECTS SCSS CARDS with transitions ref:https://codepen.io/hexagoncircle/pen/XWbWKwL -->
+  <section class="my-2 py-5">
+    <div class="container">
+      <h3 style="
+          color: #fff;
+          padding-bottom: 2.5rem;">
+        TOP PROJECTS</h3>
+      <main class="page-content">
+        <div class="card">
+          <div class="content">
+            <h2 class="title">Mountain View</h2>
+            <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the
+              mountains</p>
+            <button class="btn">View Trips</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h2 class="title">To The Beach</h2>
+            <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+            <button class="btn">View Trips</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h2 class="title">Desert Destinations</h2>
+            <p class="copy">It's the desert you've always dreamed of</p>
+            <button class="btn">Book Now</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="content">
+            <h2 class="title">Explore The Galaxy</h2>
+            <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+            <button class="btn">Book Now</button>
+          </div>
+        </div>
+      </main>
     </div>
   </section>
 
@@ -417,9 +473,15 @@
     </section> -->
 
 
-  <section class="my-2">
-    <section id="thumbnail-carousel" class="splide"
-      aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+  <!-- <section class="my-2"> -->
+
+  <section id="thumbnail-carousel" class="splide"
+    aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+    <div class="container">
+      <h3 style="
+        color: #fff;
+        padding-bottom: 2.5rem;">
+        FEATURED DEVELOPERS</h3>
       <div class="splide__track">
         <ul class="splide__list">
           <li class="splide__slide">
@@ -454,8 +516,8 @@
           </li>
         </ul>
       </div>
-    </section>
   </section>
+  <!-- </section> -->
 
 </body>
 
